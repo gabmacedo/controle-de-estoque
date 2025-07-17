@@ -7,36 +7,11 @@
     <link href="/frontend/src/output.css" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cadastro de Materiais | Istokey</title>
+    <title>Cadastrar Materiais | Istokey</title>
 
 </head>
 <body class="bg-zinc-900 h-screen w-screen font-[Poppins] flex ">
-    <nav id="sidebar" class="bg-zinc-700 h-full w-64 min-w-64 rounded-r-2xl text-white flex">
-        <div id="sidebar-components" class="flex flex-col justify-between p-5">
-            <div id="user-component" class="flex gap-2" >
-                <div id="user-icon">
-                    <div id="icon" class=" w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-xl cursor-pointer">A</div>
-                </div>
-                <div id="user-desc">
-                    <span id="name" class="font-bold">Admin</span>
-                    <p class="text-xs">Administrador Geral</p>
-                </div>
-            </div>
-            <div id="items">
-                <ul class="flex flex-col gap-2.5 cursor-pointer">
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="main.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-house"></i>Inicio</a></li>
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="#" class="flex items-center gap-4 text-l"><i class="fa-solid fa-chart-line"></i>Relátorio</a></li>
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="materiais.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-swatchbook"></i>Materiais</a></li>
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 ativa"><a href="cadastro-material.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-pen"></i>Cadastrar Material</a></li>
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="clientes.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-users"></i>Clientes</a></li>
-                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="cadastro-cliente.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-user-plus"></i></i>Cadastrar Cliente</a></li>
-                </ul>
-            </div>
-            <div id="logout" class=" p-4 rounded-lg hover:bg-blue-500 cursor-pointer" >
-                <button id="btn-logout" class=" flex items-center gap-4 text-l cursor-pointer"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
 
     <div id="container" class=" w-full flex flex-col items-center py-12 px-6 gap-10 " >
 
@@ -70,5 +45,6 @@
         </div>
     </div>
     <script type="module" src="../scripts/cadastroMaterial.js"></script>
+    <script type="module" src="../scripts/loadNavbar.js"></script>
 </body>
 </html>

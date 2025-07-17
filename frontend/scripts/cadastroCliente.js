@@ -5,6 +5,7 @@ const clientRg = document.querySelector('#client-rg')
 const clientTel = document.querySelector('#client-tel')
 const clientEnd = document.querySelector('#client-addr')
 const clientBtn = document.querySelector('#client-btn')
+const registerResult = document.querySelector('#register-result')
 
 const URL = 'http://localhost:3000/clientes'
 
@@ -66,14 +67,16 @@ async function createClient() {
         const data = await response.json()
         console.log(data.message)
 
-        // clientNameValue.value = ''
-        // clientEmailValue.value = ''
-        // clientCpfValue.value = ''
-        // clientRgValue.value = ''
-        // clientTelValue.value = ''
-        // clientEndValue.value = ''
+        registerResult.textContent = 'Cliente cadastrado com sucesso!'
+
+        clientName.value = ''
+        clientEmail.value = ''
+        clientCpf.value = ''
+        clientRg.value = ''
+        clientTel.value = ''
+        clientEnd.value = ''
     } else {
-        console.log('Erro na criação do cliente!')
+        registerResult.textContent = 'Erro! Dados errados ou incompletos!'
     }
 }
 

@@ -75,6 +75,15 @@ async function getTotalMaterial() {
 async function getMaiorMaterial() {
     const response = await fetch(`${URL}/agrupados`)
     const data = await response.json()
+
+    if (data.length <= 1) {
+        if (materialsMore) {
+            materialsMore.textContent = 0
+            materialsMoreName.textContent = 'Nenhum material'
+        }
+        return
+    }
+
     if (materialsMore) {
         materialsMore.textContent = data[0]._sum.quantidade
         materialsMoreName.textContent = data[0].nome
@@ -89,7 +98,7 @@ async function getMenorMaterial() {
     if (data.length <= 1) {
         if (materialsMinus) {
             materialsMinus.textContent = 0
-            materialsMinusName.textContent = 'Nenhum produto'
+            materialsMinusName.textContent = 'Nenhum material'
         }
         return
     }

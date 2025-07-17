@@ -1,8 +1,5 @@
-const telefone = '11933680996'
+const url = 'http://127.0.0.1:5500/frontend/pages/main.html'
 
-const verifierTel = telefone.length
-if (verifierTel !== 11) {
-    console.log('erro')
-} else {
-    console.log('ok')
-}
+const separar = url.split('/').pop()
+
+console.log(separar)
