@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="/frontend/src/output.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cadastro de Materiais | Istokey</title>
+
+</head>
+<body class="bg-zinc-900 h-screen w-screen font-[Poppins] flex ">
+    <nav id="sidebar" class="bg-zinc-700 h-full w-64 min-w-64 rounded-r-2xl text-white flex">
+        <div id="sidebar-components" class="flex flex-col justify-between p-5">
+            <div id="user-component" class="flex gap-2" >
+                <div id="user-icon">
+                    <div id="icon" class=" w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-xl cursor-pointer">A</div>
+                </div>
+                <div id="user-desc">
+                    <span id="name" class="font-bold">Admin</span>
+                    <p class="text-xs">Administrador Geral</p>
+                </div>
+            </div>
+            <div id="items">
+                <ul class="flex flex-col gap-2.5 cursor-pointer">
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="main.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="#" class="flex items-center gap-4 text-l"><i class="fa-solid fa-chart-line"></i>Relátorio</a></li>
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="materiais.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-swatchbook"></i>Materiais</a></li>
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 ativa"><a href="cadastro-material.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-pen"></i>Cadastrar Material</a></li>
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="clientes.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-users"></i>Clientes</a></li>
+                    <li class="flex items-center p-4 rounded-lg hover:bg-blue-500 transition-colors duration-300 "><a href="cadastro-cliente.html" class="flex items-center gap-4 text-l"><i class="fa-solid fa-user-plus"></i></i>Cadastrar Cliente</a></li>
+                </ul>
+            </div>
+            <div id="logout" class=" p-4 rounded-lg hover:bg-blue-500 cursor-pointer" >
+                <button id="btn-logout" class=" flex items-center gap-4 text-l cursor-pointer"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="container" class=" w-full flex flex-col items-center py-12 px-6 gap-10 " >
+
+        <div>
+            <h1 class="text-white text-3xl font-semibold text-center">Cadastrar Produtos</h1>
+        </div>
+
+        <div id="inputs" class=" flex flex-wrap gap-6 text-white w-full max-w-6xl justify-center" >
+            <div class="flex flex-col">
+                <label for="product-name" class="mb-1">Nome do Produto</label>
+                <input type="text" id="product-name" class="border border-zinc-700 w-72 p-4 outline-none text-sm bg-zinc-800 rounded focus:border-blue-500 forError" placeholder="Nome do Produto" required>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="product-qtd" class="mb-1">Quantidade</label>
+                <input type="text" id="product-qtd" class="border border-zinc-700 w-72 p-4 outline-none text-sm bg-zinc-800 rounded focus:border-blue-500 forError" placeholder="Quantidade" required>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="product-qtd" class="mb-1">Preço</label>
+                <input type="text" id="product-price" class="border border-zinc-700 w-72 p-4 outline-none text-sm bg-zinc-800 rounded focus:border-blue-500 forError" placeholder="Valor" required>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="product-date" class="mb-1">Data da compra</label>
+                <input type="date" id="product-date" class="border border-zinc-700 w-72 p-4 outline-none text-sm bg-zinc-800 rounded focus:border-blue-500 forError" required>
+            </div>
+            <div class="flex items-end">
+                <button id="product-btn" class="bg-blue-500 p-4 rounded-lg text-white font-bold w-48 cursor-pointer hover:bg-blue-600 transition-colors duration-300 active:bg-blue-400 ">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../scripts/cadastroMaterial.js"></script>
+</body>
+</html>

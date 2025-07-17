@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+model Materiais {
+  id Int @id @default(autoincrement()) 
+  nome String
+  quantidade Int
+  preco_centavos Int
+  data String
+}
+
+model Clientes {
+  id Int @id @default(autoincrement())
+  nome String
+  email String? @unique 
+  cpf String? @unique
+  rg String? @unique
+  telefone String?
+  endereco String?
+}
