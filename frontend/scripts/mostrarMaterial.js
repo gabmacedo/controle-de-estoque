@@ -1,3 +1,9 @@
+const token = sessionStorage.getItem('token')
+if (!token) {
+  window.location.href = 'index.html'
+}
+
+
 const materialsMore = document.querySelector('#more')
 const materialsMinus = document.querySelector('#minus')
 
@@ -37,7 +43,7 @@ async function getMateriais() {
         dataSpan.textContent = material.data
 
         const trashButton = document.createElement('button')
-        trashButton.className = "text-red-500 hover:text-red-400 justify-self-end delete-btn"
+        trashButton.className = "text-red-500 hover:text-red-400 justify-self-end cursor-pointer delete-btn"
         trashButton.innerHTML = `<i class="fa-solid fa-trash"></i>`
         
         div.appendChild(nomeSpan)
@@ -76,7 +82,7 @@ async function getMaiorMaterial() {
     const response = await fetch(`${URL}/agrupados`)
     const data = await response.json()
 
-    if (data.length <= 1) {
+    if (data.length <= 0) {
         if (materialsMore) {
             materialsMore.textContent = 0
             materialsMoreName.textContent = 'Nenhum material'
@@ -95,7 +101,7 @@ async function getMenorMaterial() {
     const data = await response.json()
     const lastIndex = data.length -1
 
-    if (data.length <= 1) {
+    if (data.length <= 0) {
         if (materialsMinus) {
             materialsMinus.textContent = 0
             materialsMinusName.textContent = 'Nenhum material'

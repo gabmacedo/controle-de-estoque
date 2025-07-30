@@ -1,3 +1,8 @@
+const token = sessionStorage.getItem('token')
+if (!token) {
+  window.location.href = 'index.html'
+}
+
 const clientName = document.querySelector('#client-name')
 const clientEmail = document.querySelector('#client-email')
 const clientCpf = document.querySelector('#client-cpf')
@@ -64,9 +69,9 @@ async function createClient() {
         body: JSON.stringify(newClient)
     })
     if (response.ok) {
+        alert('Cliente Cadastrado!')
         const data = await response.json()
         console.log(data.message)
-
         registerResult.textContent = 'Cliente cadastrado com sucesso!'
 
         clientName.value = ''
@@ -79,5 +84,3 @@ async function createClient() {
         registerResult.textContent = 'Erro! Dados errados ou incompletos!'
     }
 }
-
-

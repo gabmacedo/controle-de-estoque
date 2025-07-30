@@ -24,3 +24,10 @@ model Clientes {
   telefone String?
   endereco String?
 }
+
+model Users {
+  id Int @id @default(autoincrement())
+  nome String
+  email String
+  senha String
+}

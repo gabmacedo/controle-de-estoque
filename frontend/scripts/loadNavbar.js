@@ -1,3 +1,5 @@
+const USERNAME = sessionStorage.getItem('name')
+
 async function loadNavbar() {
     const container = document.getElementById('navbar-container')
     if (!container) return
@@ -7,7 +9,22 @@ async function loadNavbar() {
         const html = await response.text()
         container.innerHTML = html
 
+        const navBarUserName = document.querySelector('#name')
+        navBarUserName.textContent = USERNAME
+
         currentPage()
+
+        const btnLogout = document.querySelector('#btn-logout')
+        btnLogout.addEventListener('click', () => {
+            logout()
+        })
+
+        function logout() {
+            sessionStorage.removeItem('token')
+            setTimeout(() => {
+                window.location.href = 'index.html'
+            }, 1500)
+        }
 
     } catch (error) {
         console.log('Erro ao carregar navbar', error)
@@ -28,5 +45,6 @@ function currentPage() {
         }
     })
 }
+
 
 loadNavbar()
