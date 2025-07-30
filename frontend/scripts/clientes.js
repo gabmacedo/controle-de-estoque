@@ -1,3 +1,8 @@
+const token = sessionStorage.getItem('token')
+if (!token) {
+  window.location.href = 'index.html'
+}
+
 const URL = "http://localhost:3000/clientes";
 
 const clientsList = document.querySelector("#clients-list");
@@ -59,7 +64,8 @@ async function getClients() {
 
   const deleteBtn = document.querySelectorAll(".delete-btn");
   deleteBtn.forEach((buttonDelete) => {
-    buttonDelete.addEventListener("dblick", async () => {
+    buttonDelete.addEventListener("dblclick", async (e) => {
+      e.preventDefault()
       const div = buttonDelete.parentElement;
       const li = div.parentElement;
       await deleteClient(li.dataset.id);
@@ -104,7 +110,7 @@ async function deleteClient(id) {
   })
   
   if (response.ok) {
-    console.log('Material deletado com sucesso!')
+    console.log('Cliente deletado com sucesso!')
   }
   ;
 }

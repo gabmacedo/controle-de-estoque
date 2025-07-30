@@ -1,5 +1,7 @@
-import getMateriais from "./mostrarMaterial.js"
-
+const token = sessionStorage.getItem('token')
+if (!token) {
+  window.location.href = 'index.html'
+}
 
 const productName = document.querySelector('#product-name')
 const productQtd = document.querySelector('#product-qtd')
@@ -11,7 +13,7 @@ const URL = 'http://localhost:3000/materiais'
 
 productBtn.addEventListener('click', async () => {
     await createMaterial()
-    alert('Material Cadastrado!')
+    
 })
 
 async function createMaterial() {
@@ -45,6 +47,7 @@ async function createMaterial() {
     })
     if (response.ok) {
         const data = await response.json()
+        alert('Material Cadastrado!')
         console.log('Material criado com sucesso!', data)
 
         productName.value = ''

@@ -1,3 +1,8 @@
+const token = sessionStorage.getItem('token')
+if (!token) {
+  window.location.href = 'index.html'
+}
+
 const clientName = document.querySelector('#client-name')
 const clientEmail = document.querySelector('#client-email')
 const clientCpf = document.querySelector('#client-cpf')
@@ -5,6 +10,7 @@ const clientRg = document.querySelector('#client-rg')
 const clientTel = document.querySelector('#client-tel')
 const clientEnd = document.querySelector('#client-addr')
 const clientBtn = document.querySelector('#client-btn')
+const registerResult = document.querySelector('#register-result')
 
 const URL = 'http://localhost:3000/clientes'
 
@@ -63,18 +69,18 @@ async function createClient() {
         body: JSON.stringify(newClient)
     })
     if (response.ok) {
+        alert('Cliente Cadastrado!')
         const data = await response.json()
         console.log(data.message)
+        registerResult.textContent = 'Cliente cadastrado com sucesso!'
 
-        // clientNameValue.value = ''
-        // clientEmailValue.value = ''
-        // clientCpfValue.value = ''
-        // clientRgValue.value = ''
-        // clientTelValue.value = ''
-        // clientEndValue.value = ''
+        clientName.value = ''
+        clientEmail.value = ''
+        clientCpf.value = ''
+        clientRg.value = ''
+        clientTel.value = ''
+        clientEnd.value = ''
     } else {
-        console.log('Erro na criação do cliente!')
+        registerResult.textContent = 'Erro! Dados errados ou incompletos!'
     }
 }
-
-
