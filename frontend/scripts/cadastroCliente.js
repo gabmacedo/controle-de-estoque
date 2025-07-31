@@ -56,11 +56,11 @@ async function createClient() {
 
     const newClient = {
         nome: clientNameValue,
-        email: clientEmailValue,
-        cpf: clientCpfValue,
-        rg: clientRgValue,
-        telefone: clientTelValue,
-        endereco: clientEndValue
+        email: clientEmailValue ? clientEmailValue : '',
+        cpf: clientCpfValue ? clientCpfValue : '',
+        rg: clientRgValue ? clientRgValue : '',
+        telefone: clientTelValue ? clientTelValue : '',
+        endereco: clientEndValue ? clientEndValue : ''
     }
 
     const response = await fetch(URL, {

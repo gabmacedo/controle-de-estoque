@@ -12,14 +12,12 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { nome, email, cpf, rg, telefone, endereco} = req.body
 
-    const isCpfValid = validadeCpf(cpf)
-    if (!isCpfValid) return res.status(400).json({message: 'CPF inválido!'})
+     
+    if (cpf && !validadeCpf(cpf)) return res.status(400).json({message: 'CPF inválido!'})
 
-    const verifierEmail = email.includes('@')
-    if (!verifierEmail) return res.status(400).json({message: 'Email incorreto!'})
-
-    const verifierTel = telefone.length
-    if (verifierTel != 11) {
+    if (email && !email.includes('@')) return res.status(400).json({message: 'Email incorreto!'})
+ 
+    if (telefone && !telefone.length != 11) {
         return res.status(400).json({message: 'Telefone Incorreto!'})
     }
 
@@ -27,11 +25,11 @@ router.post('/', async (req, res) => {
         const newCliente = await prisma.clientes.create({
             data: {
                 nome,
-                email,
-                cpf,
-                rg,
-                telefone,
-                endereco
+                email: email || null,
+                cpf: cpf || null,
+                rg: rg || null,
+                telefone: telefone || null,
+                endereco: endereco || null
             }
         })
         return res.status(201).json(newCliente)

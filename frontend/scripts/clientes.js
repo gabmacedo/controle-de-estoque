@@ -22,17 +22,17 @@ async function getClients() {
 
     li.innerHTML = `<div class="p-3 grid grid-cols-4 items-center cursor-pointer hover:bg-zinc-700 transition toggle-details">
                         <span>${cliente.nome}</span>
-                        <span>${cliente.email}</span>
-                        <span>${cliente.cpf}</span>
+                        <span>${cliente.email ? cliente.email : ''}</span>
+                        <span>${cliente.cpf ? cliente.cpf : ''}</span>
                         <button class="text-red-500 hover:text-red-400 justify-self-end delete-btn">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                         </div>
                         <div class="hidden p-3 border-t border-zinc-700 bg-zinc-900 text-sm details ">
                         <div class="grid grid-cols-4">
-                            <p><strong>RG:</strong> ${cliente.rg}</p>
-                            <p><strong>Telefone:</strong> ${cliente.telefone}</p>
-                            <p><strong>Endereço:</strong> ${cliente.endereco}</p>
+                            <p><strong>RG:</strong> ${cliente.rg ? cliente.rg : ''}</p>
+                            <p><strong>Telefone:</strong> ${cliente.telefone ? cliente.telefone : ''}</p>
+                            <p><strong>Endereço:</strong> ${cliente.endereco ? cliente.endereco : ''}</p>
                         </div>
                     </div>
                 </li>
