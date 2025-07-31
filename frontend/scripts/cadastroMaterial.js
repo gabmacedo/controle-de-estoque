@@ -12,7 +12,7 @@ const productBtn = document.querySelector('#product-btn')
 const modalContainer = document.querySelector('#modal-container')
 const modalButton = document.querySelector('#ok-btn-modal')
 
-const URL = 'http://localhost:3000/materiais'
+const URL = 'https://controle-de-estoque-istokey.up.railway.app/materiais';
 
 productBtn.addEventListener('click', async (e) => {
     e.preventDefault()

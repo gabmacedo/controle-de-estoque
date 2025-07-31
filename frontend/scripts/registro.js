@@ -6,7 +6,7 @@ const btnRegister = document.querySelector('#btn-register')
 const toggleBtn = document.querySelector('#show-password')
 const icon = document.querySelector('#icon')
 
-const URL_REGISTRO = 'http://localhost:3000/auth/register'
+const URL_REGISTRO = 'https://controle-de-estoque-istokey.up.railway.app/auth/register'
 
 toggleBtn.addEventListener('click', () => {
     if (passRegisterInput.type === 'password') {

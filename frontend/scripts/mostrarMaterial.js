@@ -10,7 +10,7 @@ const materialsMinus = document.querySelector('#minus')
 const materialsMoreName = document.querySelector('#more-name')
 const materialsMinusName = document.querySelector('#minus-name')
 
-const URL = 'http://localhost:3000/materiais'
+const URL = 'https://controle-de-estoque-istokey.up.railway.app/materiais';
 
 async function getMateriais() {
     const response = await fetch(URL)

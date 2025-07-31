@@ -3,7 +3,7 @@ if (!token) {
   window.location.href = 'index.html'
 }
 
-const URL = "http://localhost:3000/clientes";
+const URL = 'https://controle-de-estoque-istokey.up.railway.app/clientes';
 
 const clientsList = document.querySelector("#clients-list");
 

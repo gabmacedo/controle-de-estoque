@@ -15,7 +15,7 @@ const registerResult = document.querySelector('#register-result')
 const modalContainer = document.querySelector('#modal-container')
 const modalButton = document.querySelector('#ok-btn-modal')
 
-const URL = 'http://localhost:3000/clientes'
+const URL = 'https://controle-de-estoque-istokey.up.railway.app/clientes';
 
 
 clientBtn.addEventListener('click', async (e) => {

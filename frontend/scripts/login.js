@@ -5,7 +5,7 @@ const btnLogin = document.querySelector('#btn-login')
 const toggleBtn = document.querySelector('#show-password')
 const icon = document.querySelector('#icon')
 
-const URL_LOGIN = 'http://localhost:3000/auth/login'
+const URL_LOGIN = 'https://controle-de-estoque-istokey.up.railway.app/auth/login'
 
 toggleBtn.addEventListener('click', () => {
     if (passLoginInput.type === 'password') {
