@@ -40,25 +40,26 @@ async function getClients() {
 
     clientsList.appendChild(li);
 
-    const toggleButton = document.querySelectorAll(".toggle-details");
+});
 
-    toggleButton.forEach((button) => {
-      button.addEventListener("click", () => {
-        // pega o proximo elemento HTML, ou seja o accordion
-        const currentDetail = button.nextElementSibling;
-        // verifica se esta escondido, se tem a classe 'Hidden' do tailwind
-        // se tiver escondido é true, se nao é false
-        const isHidden = currentDetail.classList.contains("hidden");
+  const toggleButton = document.querySelectorAll(".toggle-details");
 
-        // deixa todos os accordions escondidos
-        const details = document.querySelectorAll(".details");
-        details.forEach((detail) => {
-          detail.classList.add("hidden");
-        });
+  toggleButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      // pega o proximo elemento HTML, ou seja o accordion
+      const currentDetail = button.nextElementSibling;
+      // verifica se esta escondido, se tem a classe 'Hidden' do tailwind
+      // se tiver escondido é true, se nao é false
+      const isHidden = currentDetail.classList.contains("hidden");
 
-        // se tiver escondido, mostra
-        if (isHidden) currentDetail.classList.remove("hidden");
+      // deixa todos os accordions escondidos
+      const details = document.querySelectorAll(".details");
+      details.forEach((detail) => {
+        detail.classList.add("hidden");
       });
+
+      // se tiver escondido, mostra
+      if (isHidden) currentDetail.classList.remove("hidden");
     });
   });
 
@@ -109,10 +110,6 @@ async function deleteClient(id) {
     },
   })
   
-  if (response.ok) {
-    console.log('Cliente deletado com sucesso!')
-  }
-  ;
 }
 
 const totalClients = document.querySelector('#total')

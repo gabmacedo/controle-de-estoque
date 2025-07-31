@@ -12,6 +12,9 @@ const clientEnd = document.querySelector('#client-addr')
 const clientBtn = document.querySelector('#client-btn')
 const registerResult = document.querySelector('#register-result')
 
+const modalContainer = document.querySelector('#modal-container')
+const modalButton = document.querySelector('#ok-btn-modal')
+
 const URL = 'http://localhost:3000/clientes'
 
 
@@ -69,10 +72,9 @@ async function createClient() {
         body: JSON.stringify(newClient)
     })
     if (response.ok) {
-        alert('Cliente Cadastrado!')
         const data = await response.json()
-        console.log(data.message)
-        registerResult.textContent = 'Cliente cadastrado com sucesso!'
+        modalContainer.classList.remove('hidden')
+        modalContainer.classList.add('flex')
 
         clientName.value = ''
         clientEmail.value = ''
@@ -84,3 +86,8 @@ async function createClient() {
         registerResult.textContent = 'Erro! Dados errados ou incompletos!'
     }
 }
+
+modalButton.addEventListener('click', () => {
+    modalContainer.classList.remove('flex')
+    modalContainer.classList.add('hidden')
+})

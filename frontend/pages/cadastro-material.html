@@ -13,7 +13,24 @@
 <body class="bg-zinc-900 h-screen w-screen font-[Poppins] flex ">
     <div id="navbar-container"></div>
 
-    <div id="container" class=" w-full flex flex-col items-center py-12 px-6 gap-10 " >
+    
+    <div id="container" class=" w-full flex flex-col items-center py-12 px-6 gap-10 relative">
+        
+        <!-- Modal -->
+         <div id="modal-container" class="inset-0 bg-black/50 z-50 absolute items-center justify-center hidden">
+            <div id="modal" class="bg-zinc-700 flex flex-col p-5 rounded-lg h-60 w-80 shadow-xl">
+                <div class="flex flex-col items-center gap-2 h-full justify-evenly text-white">
+                    <h1 class="text-[18px] font-semibold"> <i class="fa-regular fa-circle-check"></i> Material Cadastrado!</h1>
+                    <span class="text-sm text-center">Agora você pode conferir na seção materiais.</span>
+                    <button
+                    type="button"
+                    id="ok-btn-modal"
+                    class="bg-blue-500 w-full text-white font-semibold rounded-lg p-3 cursor-pointer shadow-lg hover:bg-blue-600 transition-colors duration-300">
+                    Ok
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <div>
             <h1 class="text-white text-3xl font-semibold text-center">Cadastrar Produtos</h1>

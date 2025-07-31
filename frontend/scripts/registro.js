@@ -43,7 +43,6 @@ async function registerUser() {
 
     if (response.ok) {
         const data = await response.json()
-        console.log('data:', data)
         
         if (data.done) {
             window.location.href = 'registro-realizado.html'

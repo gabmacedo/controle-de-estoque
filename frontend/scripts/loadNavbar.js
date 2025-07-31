@@ -12,6 +12,9 @@ async function loadNavbar() {
         const navBarUserName = document.querySelector('#name')
         navBarUserName.textContent = USERNAME
 
+        const icon = document.querySelector('#icon')
+        icon.textContent = USERNAME.charAt(0)
+
         currentPage()
 
         const btnLogout = document.querySelector('#btn-logout')

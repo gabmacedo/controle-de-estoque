@@ -9,9 +9,13 @@ const productPrice = document.querySelector('#product-price')
 const productDate = document.querySelector('#product-date')
 const productBtn = document.querySelector('#product-btn')
 
+const modalContainer = document.querySelector('#modal-container')
+const modalButton = document.querySelector('#ok-btn-modal')
+
 const URL = 'http://localhost:3000/materiais'
 
-productBtn.addEventListener('click', async () => {
+productBtn.addEventListener('click', async (e) => {
+    e.preventDefault()
     await createMaterial()
     
 })
@@ -47,8 +51,8 @@ async function createMaterial() {
     })
     if (response.ok) {
         const data = await response.json()
-        alert('Material Cadastrado!')
-        console.log('Material criado com sucesso!', data)
+        modalContainer.classList.remove('hidden')
+        modalContainer.classList.add('flex')
 
         productName.value = ''
         productQtd.value = ''
@@ -59,3 +63,8 @@ async function createMaterial() {
         console.log('Erro na criação do material!')
     }
 }
+
+modalButton.addEventListener('click', () => {
+    modalContainer.classList.remove('flex')
+    modalContainer.classList.add('hidden')
+})

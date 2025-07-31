@@ -48,7 +48,6 @@ async function loginUser() {
             }, 2000)
         } else {
             resetButton()
-            console.log('Erro no registro!')
         }
 
     } 

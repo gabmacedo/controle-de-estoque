@@ -66,8 +66,6 @@ async function getMateriais() {
                 await deleteMaterial(li.dataset.id)
             })
         })
-    } else {
-        console.log('error')
     }
 }
 
@@ -124,13 +122,10 @@ async function deleteMaterial(id) {
         }
     })
     if (!response.ok) {
-        console.log('Deletado com sucesso')
         getMateriais()
         getTotalMaterial()
         getMaiorMaterial()
         getMenorMaterial()
-    } else {
-        console.log('Erro ao deletar material')
     }
 }
 
